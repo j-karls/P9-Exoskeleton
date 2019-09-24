@@ -30,6 +30,7 @@ svr_obj = svm.SVR(kernel="poly", degree=2, C=10000, epsilon=0.01,
 svr_obj.fit(x_train, y_train)
 svr_predict = svr_obj.predict(x_test)
 
+# Evaluate algorithms
 print("MAPE LR: " + str(mean_absolute_percentage_error(y_test, lr_predict)))
 print("MAPE SVR: " + str(mean_absolute_percentage_error(y_test, svr_predict)))
 
@@ -41,3 +42,6 @@ plot.title("Diabetes")
 # plot.xlabel("X")
 # plot.ylabel("Y")
 plot.show()
+
+# Todo: Add HMM, use grid_search to tune the model, use better dataset
+# Todo: then compare with NN?
